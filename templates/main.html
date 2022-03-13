@@ -1,0 +1,28 @@
+{% extends "base.html" %} {%block content%}
+<h1>Rock Paper Scissors</h1>
+<h2>Player 1</h2>
+<form action=/game method="post">
+    <label for="player1_name">Player 1 Name</label>
+    <input type="text" name="player1_name" id="player1_name">
+    <label for="player1_choice">Player 1 choice</label> 
+    <select name="player1_choice" id="player1_choice">
+        <option value="none">Select-one</option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+    </select>
+    <br>
+    <br>
+    <label for="player2_name">Player 2 Name</label>
+    <input type="text" name="player2_name" id="player2_name">
+    <label for="player2_choice">Player 1 choice</label> 
+    <select name="player2_choice" id="player2_choice">
+        <option value="none">Select-one</option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+    </select>
+    <input type="submit" value="store_player_choice">
+</form>
+
+{%endblock%}
