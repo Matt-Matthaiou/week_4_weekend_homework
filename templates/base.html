@@ -1,15 +1,18 @@
 <html>
     <head>
         <title>Rock Paper scissors</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <header>
             <ul>
-                <li><a href="/game">Home</a></li>
+                <li><a href="/welcome">Home</a></li>
             </ul>
         </header>
         <main>
-            {% block content %} {% endblock %}
+            <div id="content">
+                {% block content %} {% endblock %}
+            </div>
         </main>
     </body>
 

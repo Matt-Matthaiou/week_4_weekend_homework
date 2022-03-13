@@ -1,0 +1,17 @@
+body {
+    background-image: url(https://cdn.dribbble.com/users/976907/screenshots/4879640/dribbble_13.gif);
+    background-size: 100%;
+    background-position: center;
+    
+
+}
+
+body > main {
+    display: flex;
+    flex-direction: column;
+  
+}
+
+#content {
+    align-self: center;
+}
