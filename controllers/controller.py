@@ -13,8 +13,7 @@ def play_game():
     player1 = Player(request.form['player1_name'], request.form['player1_choice'])
     player2 = Player(request.form['player2_name'], request.form['player2_choice'])
     game = Game(player1, player2 )
-    winner = game.compare()
-    return render_template('result.html', winner=winner, player1=player1.name,player2=player2.name, player1_choice=player1.choice, player2_choice=player2.choice )
+    return render_template('result.html', winner=game.compare(), player1=player1.name,player2=player2.name, player1_choice=player1.choice, player2_choice=player2.choice )
 
 @app.route("/welcome")
 def rules_page():
@@ -27,8 +26,6 @@ def vs_com_page():
 @app.route('/play', methods=["POST"])
 def play_game_vs_com():
     player = Player(request.form["player1_name"], request.form['player1_choice'])
-    com_choices = ['rock', 'paper', 'scissors']
-    com_choice = random.choice(com_choices)
+    com_choice = random.choice(['rock', 'paper', 'scissors'])
     game = Game(player, Player("Com", com_choice))
-    winner= game.compare()
-    return render_template('result.html', winner=winner, player1=player.name,player2='Com', player1_choice=player.choice, player2_choice=com_choice )
+    return render_template('result.html', winner=game.compare(), player1=player.name,player2='Com', player1_choice=player.choice, player2_choice=com_choice )
